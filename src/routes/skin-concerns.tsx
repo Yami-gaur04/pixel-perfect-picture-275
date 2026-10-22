@@ -17,7 +17,7 @@ export const Route = createFileRoute("/skin-concerns")({
 
 function Concerns() {
   const [i, setI] = useState(0);
-  const c = concerns[i];
+  const c = concerns[i]!;
   const art = findArticle(c.article);
   return (
     <>

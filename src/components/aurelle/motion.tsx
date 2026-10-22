@@ -37,7 +37,7 @@ export function useInView<T extends HTMLElement>(threshold = 0.2) {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const io = new IntersectionObserver(([e]) => { if (e.isIntersecting) { set(true); io.disconnect(); } }, { threshold });
+    const io = new IntersectionObserver(([e]) => { if (e?.isIntersecting) { set(true); io.disconnect(); } }, { threshold });
     io.observe(el);
     return () => io.disconnect();
   }, [threshold]);
