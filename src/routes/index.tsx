@@ -197,7 +197,7 @@ function ScenePhilosophy() {
 /* Scene 5 — treatment atlas with varied compositions */
 function SceneAtlas() {
   const featured = treatments.slice(0, 5);
-  const [a, b, c, d, e] = featured;
+  const [a, b, c, d, e] = featured as [typeof treatments[number], typeof treatments[number], typeof treatments[number], typeof treatments[number], typeof treatments[number]];
   return (
     <section className="bg-ivory px-5 py-32 sm:px-10">
       <div className="mb-20 flex flex-wrap items-end justify-between gap-6">
@@ -284,7 +284,7 @@ function SceneResults() {
 
 /* Scene 8 — the Skin Journal */
 function SceneJournal() {
-  const [lead, ...rest] = articles;
+  const [lead, ...rest] = articles as [typeof articles[number], ...typeof articles];
   return (
     <section className="bg-ivory px-5 py-32 sm:px-10">
       <div className="mb-16 flex items-end justify-between border-b border-foreground/20 pb-6">

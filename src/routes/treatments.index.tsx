@@ -17,7 +17,7 @@ export const Route = createFileRoute("/treatments/")({
 
 function Treatments() {
   const [active, setActive] = useState(0);
-  const t = treatments[active];
+  const t = treatments[active]!;
   return (
     <>
       <section className="relative grid min-h-screen grid-cols-12 gap-6 px-5 pb-20 pt-32 sm:px-10">

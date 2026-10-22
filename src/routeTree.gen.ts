@@ -11,9 +11,15 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as BookAppointmentRouteImport } from './routes/book-appointment'
+import { Route as CancellationPolicyRouteImport } from './routes/cancellation-policy'
+import { Route as ContactRouteImport } from './routes/contact'
 import { Route as DoctorRouteImport } from './routes/doctor'
+import { Route as MedicalDisclaimerRouteImport } from './routes/medical-disclaimer'
+import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ResultsRouteImport } from './routes/results'
 import { Route as SkinConcernsRouteImport } from './routes/skin-concerns'
+import { Route as TermsRouteImport } from './routes/terms'
 import { Route as JournalIndexRouteImport } from './routes/journal.index'
 import { Route as JournalSlugRouteImport } from './routes/journal.$slug'
 import { Route as TreatmentsIndexRouteImport } from './routes/treatments.index'
@@ -29,9 +35,34 @@ const AboutRoute = AboutRouteImport.update({
   path: '/about',
   getParentRoute: () => rootRouteImport,
 } as any)
+const BookAppointmentRoute = BookAppointmentRouteImport.update({
+  id: '/book-appointment',
+  path: '/book-appointment',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CancellationPolicyRoute = CancellationPolicyRouteImport.update({
+  id: '/cancellation-policy',
+  path: '/cancellation-policy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const DoctorRoute = DoctorRouteImport.update({
   id: '/doctor',
   path: '/doctor',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const MedicalDisclaimerRoute = MedicalDisclaimerRouteImport.update({
+  id: '/medical-disclaimer',
+  path: '/medical-disclaimer',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PrivacyRoute = PrivacyRouteImport.update({
+  id: '/privacy',
+  path: '/privacy',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ResultsRoute = ResultsRouteImport.update({
@@ -42,6 +73,11 @@ const ResultsRoute = ResultsRouteImport.update({
 const SkinConcernsRoute = SkinConcernsRouteImport.update({
   id: '/skin-concerns',
   path: '/skin-concerns',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TermsRoute = TermsRouteImport.update({
+  id: '/terms',
+  path: '/terms',
   getParentRoute: () => rootRouteImport,
 } as any)
 const JournalIndexRoute = JournalIndexRouteImport.update({
@@ -68,9 +104,15 @@ const TreatmentsSlugRoute = TreatmentsSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/book-appointment': typeof BookAppointmentRoute
+  '/cancellation-policy': typeof CancellationPolicyRoute
+  '/contact': typeof ContactRoute
   '/doctor': typeof DoctorRoute
+  '/medical-disclaimer': typeof MedicalDisclaimerRoute
+  '/privacy': typeof PrivacyRoute
   '/results': typeof ResultsRoute
   '/skin-concerns': typeof SkinConcernsRoute
+  '/terms': typeof TermsRoute
   '/journal/$slug': typeof JournalSlugRoute
   '/treatments/$slug': typeof TreatmentsSlugRoute
   '/journal/': typeof JournalIndexRoute
@@ -79,9 +121,15 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/book-appointment': typeof BookAppointmentRoute
+  '/cancellation-policy': typeof CancellationPolicyRoute
+  '/contact': typeof ContactRoute
   '/doctor': typeof DoctorRoute
+  '/medical-disclaimer': typeof MedicalDisclaimerRoute
+  '/privacy': typeof PrivacyRoute
   '/results': typeof ResultsRoute
   '/skin-concerns': typeof SkinConcernsRoute
+  '/terms': typeof TermsRoute
   '/journal/$slug': typeof JournalSlugRoute
   '/treatments/$slug': typeof TreatmentsSlugRoute
   '/journal': typeof JournalIndexRoute
@@ -91,9 +139,15 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/book-appointment': typeof BookAppointmentRoute
+  '/cancellation-policy': typeof CancellationPolicyRoute
+  '/contact': typeof ContactRoute
   '/doctor': typeof DoctorRoute
+  '/medical-disclaimer': typeof MedicalDisclaimerRoute
+  '/privacy': typeof PrivacyRoute
   '/results': typeof ResultsRoute
   '/skin-concerns': typeof SkinConcernsRoute
+  '/terms': typeof TermsRoute
   '/journal/$slug': typeof JournalSlugRoute
   '/treatments/$slug': typeof TreatmentsSlugRoute
   '/journal/': typeof JournalIndexRoute
@@ -104,9 +158,15 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/book-appointment'
+    | '/cancellation-policy'
+    | '/contact'
     | '/doctor'
+    | '/medical-disclaimer'
+    | '/privacy'
     | '/results'
     | '/skin-concerns'
+    | '/terms'
     | '/journal/$slug'
     | '/treatments/$slug'
     | '/journal/'
@@ -115,9 +175,15 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/book-appointment'
+    | '/cancellation-policy'
+    | '/contact'
     | '/doctor'
+    | '/medical-disclaimer'
+    | '/privacy'
     | '/results'
     | '/skin-concerns'
+    | '/terms'
     | '/journal/$slug'
     | '/treatments/$slug'
     | '/journal'
@@ -126,9 +192,15 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/book-appointment'
+    | '/cancellation-policy'
+    | '/contact'
     | '/doctor'
+    | '/medical-disclaimer'
+    | '/privacy'
     | '/results'
     | '/skin-concerns'
+    | '/terms'
     | '/journal/$slug'
     | '/treatments/$slug'
     | '/journal/'
@@ -138,9 +210,15 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  BookAppointmentRoute: typeof BookAppointmentRoute
+  CancellationPolicyRoute: typeof CancellationPolicyRoute
+  ContactRoute: typeof ContactRoute
   DoctorRoute: typeof DoctorRoute
+  MedicalDisclaimerRoute: typeof MedicalDisclaimerRoute
+  PrivacyRoute: typeof PrivacyRoute
   ResultsRoute: typeof ResultsRoute
   SkinConcernsRoute: typeof SkinConcernsRoute
+  TermsRoute: typeof TermsRoute
   JournalSlugRoute: typeof JournalSlugRoute
   TreatmentsSlugRoute: typeof TreatmentsSlugRoute
   JournalIndexRoute: typeof JournalIndexRoute
@@ -163,11 +241,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AboutRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/book-appointment': {
+      id: '/book-appointment'
+      path: '/book-appointment'
+      fullPath: '/book-appointment'
+      preLoaderRoute: typeof BookAppointmentRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/cancellation-policy': {
+      id: '/cancellation-policy'
+      path: '/cancellation-policy'
+      fullPath: '/cancellation-policy'
+      preLoaderRoute: typeof CancellationPolicyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/doctor': {
       id: '/doctor'
       path: '/doctor'
       fullPath: '/doctor'
       preLoaderRoute: typeof DoctorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/medical-disclaimer': {
+      id: '/medical-disclaimer'
+      path: '/medical-disclaimer'
+      fullPath: '/medical-disclaimer'
+      preLoaderRoute: typeof MedicalDisclaimerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/privacy': {
+      id: '/privacy'
+      path: '/privacy'
+      fullPath: '/privacy'
+      preLoaderRoute: typeof PrivacyRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/results': {
@@ -182,6 +295,13 @@ declare module '@tanstack/react-router' {
       path: '/skin-concerns'
       fullPath: '/skin-concerns'
       preLoaderRoute: typeof SkinConcernsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/terms': {
+      id: '/terms'
+      path: '/terms'
+      fullPath: '/terms'
+      preLoaderRoute: typeof TermsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/journal/': {
@@ -218,9 +338,15 @@ declare module '@tanstack/react-router' {
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  BookAppointmentRoute: BookAppointmentRoute,
+  CancellationPolicyRoute: CancellationPolicyRoute,
+  ContactRoute: ContactRoute,
   DoctorRoute: DoctorRoute,
+  MedicalDisclaimerRoute: MedicalDisclaimerRoute,
+  PrivacyRoute: PrivacyRoute,
   ResultsRoute: ResultsRoute,
   SkinConcernsRoute: SkinConcernsRoute,
+  TermsRoute: TermsRoute,
   JournalSlugRoute: JournalSlugRoute,
   TreatmentsSlugRoute: TreatmentsSlugRoute,
   JournalIndexRoute: JournalIndexRoute,
