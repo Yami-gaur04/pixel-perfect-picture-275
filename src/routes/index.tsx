@@ -82,10 +82,7 @@ function SceneReveal() {
           </div>
         </div>
 
-        <aside className="glass absolute right-5 top-28 hidden max-w-[220px] rounded-sm p-4 text-xs leading-relaxed text-foreground md:block lg:right-10">
-          <p className="eyebrow mb-2 opacity-70">Fig. 1</p>
-          Light reveals skin as it is — texture, tone, story. Scroll to bring colour through.
-        </aside>
+        
         <p className="eyebrow absolute bottom-6 left-5 text-foreground/60 sm:left-10">Scroll ↓</p>
         <p className="eyebrow absolute bottom-6 right-28 hidden text-foreground/60 md:block">Editorial photography</p>
       </div>
