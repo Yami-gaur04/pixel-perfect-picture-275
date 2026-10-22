@@ -64,13 +64,11 @@ export function LiquidReveal({ src, alt, progressRef }: { src: string; alt: stri
       <defs>
         <filter id={`gray-${id}`}><feColorMatrix type="saturate" values="0" /><feComponentTransfer><feFuncR type="linear" slope="1.08" intercept="-0.03" /><feFuncG type="linear" slope="1.08" intercept="-0.03" /><feFuncB type="linear" slope="1.08" intercept="-0.03" /></feComponentTransfer></filter>
         <filter id={`liquid-${id}`} x="-20%" y="-20%" width="140%" height="140%">
-          <feTurbulence type="fractalNoise" baseFrequency="0.008 0.02" numOctaves="2" seed="4">
-            <animate attributeName="baseFrequency" dur="18s" values="0.008 0.02;0.012 0.03;0.008 0.02" repeatCount="indefinite" />
-          </feTurbulence>
+          <feTurbulence type="fractalNoise" baseFrequency="0.008 0.02" numOctaves="2" seed="4" />
           <feDisplacementMap in="SourceGraphic" scale="70" />
         </filter>
         <filter id={`chrome-${id}`} x="-20%" y="-20%" width="140%" height="140%">
-          <feTurbulence type="fractalNoise" baseFrequency="0.01 0.03" numOctaves="2" seed="4" />
+          <feTurbulence type="fractalNoise" baseFrequency="0.008 0.02" numOctaves="2" seed="4" />
           <feDisplacementMap in="SourceGraphic" scale="70" result="d" />
           <feGaussianBlur in="d" stdDeviation="1.2" />
         </filter>
