@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as DoctorRouteImport } from './routes/doctor'
+import { Route as ResultsRouteImport } from './routes/results'
+import { Route as SkinConcernsRouteImport } from './routes/skin-concerns'
+import { Route as JournalIndexRouteImport } from './routes/journal.index'
+import { Route as JournalSlugRouteImport } from './routes/journal.$slug'
+import { Route as TreatmentsIndexRouteImport } from './routes/treatments.index'
+import { Route as TreatmentsSlugRouteImport } from './routes/treatments.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DoctorRoute = DoctorRouteImport.update({
+  id: '/doctor',
+  path: '/doctor',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResultsRoute = ResultsRouteImport.update({
+  id: '/results',
+  path: '/results',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const SkinConcernsRoute = SkinConcernsRouteImport.update({
+  id: '/skin-concerns',
+  path: '/skin-concerns',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JournalIndexRoute = JournalIndexRouteImport.update({
+  id: '/journal/',
+  path: '/journal/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JournalSlugRoute = JournalSlugRouteImport.update({
+  id: '/journal/$slug',
+  path: '/journal/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TreatmentsIndexRoute = TreatmentsIndexRouteImport.update({
+  id: '/treatments/',
+  path: '/treatments/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TreatmentsSlugRoute = TreatmentsSlugRouteImport.update({
+  id: '/treatments/$slug',
+  path: '/treatments/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/doctor': typeof DoctorRoute
+  '/results': typeof ResultsRoute
+  '/skin-concerns': typeof SkinConcernsRoute
+  '/journal/$slug': typeof JournalSlugRoute
+  '/treatments/$slug': typeof TreatmentsSlugRoute
+  '/journal/': typeof JournalIndexRoute
+  '/treatments/': typeof TreatmentsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/doctor': typeof DoctorRoute
+  '/results': typeof ResultsRoute
+  '/skin-concerns': typeof SkinConcernsRoute
+  '/journal/$slug': typeof JournalSlugRoute
+  '/treatments/$slug': typeof TreatmentsSlugRoute
+  '/journal': typeof JournalIndexRoute
+  '/treatments': typeof TreatmentsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/doctor': typeof DoctorRoute
+  '/results': typeof ResultsRoute
+  '/skin-concerns': typeof SkinConcernsRoute
+  '/journal/$slug': typeof JournalSlugRoute
+  '/treatments/$slug': typeof TreatmentsSlugRoute
+  '/journal/': typeof JournalIndexRoute
+  '/treatments/': typeof TreatmentsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/doctor'
+    | '/results'
+    | '/skin-concerns'
+    | '/journal/$slug'
+    | '/treatments/$slug'
+    | '/journal/'
+    | '/treatments/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/doctor'
+    | '/results'
+    | '/skin-concerns'
+    | '/journal/$slug'
+    | '/treatments/$slug'
+    | '/journal'
+    | '/treatments'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/doctor'
+    | '/results'
+    | '/skin-concerns'
+    | '/journal/$slug'
+    | '/treatments/$slug'
+    | '/journal/'
+    | '/treatments/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  DoctorRoute: typeof DoctorRoute
+  ResultsRoute: typeof ResultsRoute
+  SkinConcernsRoute: typeof SkinConcernsRoute
+  JournalSlugRoute: typeof JournalSlugRoute
+  TreatmentsSlugRoute: typeof TreatmentsSlugRoute
+  JournalIndexRoute: typeof JournalIndexRoute
+  TreatmentsIndexRoute: typeof TreatmentsIndexRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/doctor': {
+      id: '/doctor'
+      path: '/doctor'
+      fullPath: '/doctor'
+      preLoaderRoute: typeof DoctorRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/results': {
+      id: '/results'
+      path: '/results'
+      fullPath: '/results'
+      preLoaderRoute: typeof ResultsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/skin-concerns': {
+      id: '/skin-concerns'
+      path: '/skin-concerns'
+      fullPath: '/skin-concerns'
+      preLoaderRoute: typeof SkinConcernsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/journal/': {
+      id: '/journal/'
+      path: '/journal'
+      fullPath: '/journal/'
+      preLoaderRoute: typeof JournalIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/journal/$slug': {
+      id: '/journal/$slug'
+      path: '/journal/$slug'
+      fullPath: '/journal/$slug'
+      preLoaderRoute: typeof JournalSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/treatments/': {
+      id: '/treatments/'
+      path: '/treatments'
+      fullPath: '/treatments/'
+      preLoaderRoute: typeof TreatmentsIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/treatments/$slug': {
+      id: '/treatments/$slug'
+      path: '/treatments/$slug'
+      fullPath: '/treatments/$slug'
+      preLoaderRoute: typeof TreatmentsSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  DoctorRoute: DoctorRoute,
+  ResultsRoute: ResultsRoute,
+  SkinConcernsRoute: SkinConcernsRoute,
+  JournalSlugRoute: JournalSlugRoute,
+  TreatmentsSlugRoute: TreatmentsSlugRoute,
+  JournalIndexRoute: JournalIndexRoute,
+  TreatmentsIndexRoute: TreatmentsIndexRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
